@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+
+  - if (typeof(error) !== 'undefined'){
+  - var user = 1;
+  - var mail = 1;
+  -}
+
+  form#formAddUser(name="adduser",method="post",action="/adduser")
+    input#inputUserName(type="text", placeholder="username", name="username", class=user ? 'error' : '')
+    input#inputUserEmail(type="email", placeholder="email", name="useremail", class=mail ? 'error' : '')
+    br
+    input#inputFullName(type="text", placeholder="Full Name", name="fullName", class=mail ? 'error' : '')
+    input#inputAge(type="number", placeholder="Age", name="age")
+    br
+    input#inputGender(type="text", placeholder="gender", name="gender")
+    input#inputLocation(type="text", placeholder="location", name="location")
+    br
+    button#btnSubmit(type="submit") submit

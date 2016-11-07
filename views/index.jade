@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to our test
+
+  #wrapper
+    #userInfo
+      h2 User Info
+      p
+        strong Name:
+        |  <span id='userInfoName'></span>
+        br
+        strong Age:
+        |  <span id='userInfoAge'></span>
+        br
+        strong Gender:
+        |  <span id='userInfoGender'></span>
+        br
+        strong Location:
+        |  <span id='userInfoLocation'></span>
+      #search
+        input(ref='search', type='search', placeholder='Search')
+    h2 User List
+    #userList
+      table
+        thead
+          th UserName
+          th Email
+          th FullName
+          th Delete?
+        tbody
+    #addNew
+      a(href='/newUser') Add New User
